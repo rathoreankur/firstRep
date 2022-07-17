@@ -1,0 +1,79 @@
+<apex:page >
+	1. Master Detail Relation :
+		a. It is one-to-many relation.
+    	b. We will create one-to-many relation using Master-Detail DataType.
+    	c. This Field can be created on Custom object.
+    	d. Master-Detail is a required Field.
+    	e. Master-Detail Field can be created only on those custom object which doesnt contain data.
+   		f. Object on which we have created Master-Detail field that object is called child/detail object.
+    	g. Object to Whose Data We are reffering that object is Master Object.
+    	h. Which of the Following Statesment are true?
+    
+           Parent		Child		Status
+           --------------------------------
+    	   Standard		Standard	Not Allowed
+    	   Satndard		Custom		Allowed  
+           Custom 		Standard 	Not Allowed
+     	   Custom		Custom      Allowed
+       
+       i. Object on which we created master-detail field,that object will not have any owner field.
+   	   j. owner of master record, should be the owner of child record.
+       k. when we delete master record corresponding child also get deleted.
+       l. We can create 2 master detail fields on an object.
+    
+       		A			A	B		A	B	C
+            |           |   |       |   |   |
+		    B          -------      ---------
+    	                  |             |
+    					  C             D
+         1.Accepted    2.Accepted   3.Not Accepted
+      m. An object can be master to any number of object.
+    
+      n. Child Object can be a Parent to any other object upto three level.
+        	  A			A			A				A
+         	  |			|			|				|
+    	      B         B           B           	B
+                        |           |           	|
+                        C           C           	C
+                                    |           	| 
+                                    D           	D
+                                            	    |
+        										     E
+    		1.Accepted  2.Accepted    3.Accepted   	4.Accepted
+    
+    	O. if any object has two master on it.it can not be a parent to any other object.
+    
+        p.Sharing Setting:
+          This will specify whic user can perform Creat/Edit/Read/Delete on corrosponding child record.
+          a. Read only : if you choose this option All the user who have minium read access on the Master record can perform 
+                         Create/Read/Edit/Delete operations on the corrosponding child records.
+          b. ReadWrite:  if you choose this option All the user who have minium ReadWrite access on the Master record can perform 
+                         Create/Read/Edit/Delete operations on the corrosponding child records.
+    
+    
+	2. Junction Object(Many-to-Many Relationship)
+    	a.Any custom object with 2 Master Detail Fields on it is called junction Object.
+   		b.It will Maintain Many-to-Many Relation.
+    	c.First Master-Detail Field is Called Primary Master.
+        d.Second Master-Detail Field is Called Secondary Master.
+        e.Who ever is the Owner of the Primary master .He will be the owner of the Corrosponding Child Record.
+        d. If you delete any one of the Master Record Corrosponding Child records are deleted.
+        f. Junction object Cannot be parent to any other object.
+    
+    3.Hierarchical Relation:
+     ------------------------
+    	1. This can be Created only on User Object.
+    	2. It is used to Creat One-to-One Relation
+    
+    	
+    Q: How to create Master-Detail Field on the Object Which already contains the data.(We cant create M-D Field if Object contains Data)
+    	Example : Customer
+     			  Payment Object : 5000 records present
+         Requirement: Create Master-Detail Field on Payment Object with Customer as Master.
+    
+      Step 1. Create lookup field on Payment Object Choosing Customer as Parent.
+      Step 2. Go to every object on payment record and assign Parent lookup field.
+      Step 3. change the Data type to Master-Detail from lookup Relation.
+       
+    
+</apex:page>

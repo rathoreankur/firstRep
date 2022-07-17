@@ -1,0 +1,11 @@
+<design:component>
+    <!-- the Attribute caseList is Used to get Data from FLow to Component -->
+    <design:attribute name ="caseList" Label ="Case Records"/>  
+    <!-- the Attribute selectedCase is Used to Pass Data To FLow from Component -->
+	<design:attribute name ="selectedCase" Label ="Selected Case"/> 
+    <design:attribute name ="newAccount" Label ="New Account"/> 
+
+    
+    
+
+</design:component>

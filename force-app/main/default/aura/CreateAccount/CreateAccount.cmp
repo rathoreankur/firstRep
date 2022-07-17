@@ -1,0 +1,8 @@
+<aura:component controller="createAccountAura" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name = "dataWrapper" type = "AccountWrapper" description = "datawrapper"/>
+       <aura:handler name="init" action="{!c.doInIt}" value="{!this}"/>
+
+	{!v.dataWrapper.Name}
+    {!v.dataWrapper.type}
+
+</aura:component>

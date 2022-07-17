@@ -1,0 +1,16 @@
+<aura:component implements="lightning:availableForFlowScreens" >
+    <aura:attribute name ="coloumns" type ="List"/>
+    <aura:attribute name ="caseList" type ="Case[]"/>
+    <aura:attribute name ="selectedCase" type ="Case"/>
+    <aura:attribute name ="newAccount" type ="Account"/>
+
+    <aura:handler name="init" value="{! this }" action="{!c.doInit }"/>
+    {v.newAccount.Name}
+    <lightning:datatable
+                keyField="Id"
+                data="{!v.caseList }"
+                columns="{!v.coloumns }"
+                maxRowSelection ="1"
+                onrowselection ="{!c.handleRowSelection}"/>
+    
+</aura:component>

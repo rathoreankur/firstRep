@@ -1,0 +1,21 @@
+<aura:component controller = "showAccountOportunity">
+    <aura:attribute name = "Contact" type = "List" />
+    <aura:attribute name = "name" type = "String" />
+     <div class="row">
+        <h2 class="header">Basic Input Date</h2>
+        <lightning:input name="name" label="Enter name" value="{!v.name}"/>
+        <lightning:button label="Submit" title="Submite" onclick="{! c.submit }"/>
+     </div>
+    
+    <aura:iteration items="{!v.Contact}" var="item">
+        <p>{!item.Name}</p>
+    </aura:iteration>
+    <!-- <aura:renderIf isTrue="{!not(empty(v.Contact))}">
+         <aura:iteration items="{!v.Contact}" var="item">
+             
+        <p>{!item.Account.name}</p>
+    </aura:iteration>
+   
+  </aura:renderIf> -->
+	
+</aura:component>

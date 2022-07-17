@@ -1,0 +1,43 @@
+<aura:component controller="CoindeskApi" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" >
+    <aura:attribute name = "dataWrapper" type="JsonParser"/>
+	<!--<aura:handler name="init" action="{!c.doInIt}" value="{!this}"/> -->
+    
+    
+    <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                 <lightning:card title="Update Time">
+                    <h2>
+                       {!v.dataWrapper.tme} <br/>
+                        
+                    </h2>
+                </lightning:card>
+                <lightning:card title="Patient Details">
+                    <h2>
+                       {!v.dataWrapper.chartName} <br/>
+                        {!v.dataWrapper.disclaimer}<br/>
+                        {!v.dataWrapper.bpi.GBP.code}<br/>
+                        {!v.dataWrapper.bpi.GBP.description}<br/>
+                        {!v.dataWrapper.bpi.GBP.rate}<br/>
+                        {!v.dataWrapper.bpi.GBP.rate_float}<br/>
+                        {!v.dataWrapper.bpi.GBP.symbol}<br/>
+                    </h2>
+                </lightning:card>
+    
+            </div>
+        </div>
+   
+    
+    {!v.dataWrapper.bpi.EUR.code}<br/>
+	{!v.dataWrapper.bpi.EUR.description}<br/>
+	{!v.dataWrapper.bpi.EUR.rate}<br/>
+	{!v.dataWrapper.bpi.EUR.rate_float}<br/>
+	{!v.dataWrapper.bpi.EUR.symbol}<br/>
+    
+    {!v.dataWrapper.bpi.USD.code}<br/>
+	{!v.dataWrapper.bpi.USD.description}<br/>
+	{!v.dataWrapper.bpi.USD.rate}<br/>
+	{!v.dataWrapper.bpi.USD.rate_float}<br/>
+	{!v.dataWrapper.bpi.USD.symbol}<br/>
+    
+
+</aura:component>

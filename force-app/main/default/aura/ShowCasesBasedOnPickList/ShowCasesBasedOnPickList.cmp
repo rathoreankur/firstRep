@@ -1,0 +1,57 @@
+<aura:component controller ="ShowCaseBasedOnPickListController">
+    <aura:attribute name="case" type="List"/>
+    <aura:attribute name="selectedItem" type ="string"/> 
+    <aura:attribute name="caseStatus" type ="string"/> 
+
+    <lightning:select name="priority" label="Case Priority" required="" onchange="{!c.handleOnChange}" value="{!v.selectedItem}" >
+        <option value="">None</option>
+        <option value="low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </lightning:select>
+    <lightning:select name="Status" label="Status" required="" value="{!v.caseStatus}" onchange="{!c.handleOnChange}">
+        <option value="">None</option>
+        <option value="New">New</option>
+        <option value="Working">Working</option>
+        <option value="Escalated">Escalated</option>
+        <option value="Closed">Closed</option>
+
+    </lightning:select>
+    
+     <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Case Number">Case Number</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Priority">Priority</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <aura:if isTrue="{!not(empty(v.case))}">
+
+        <aura:iteration items="{!v.case}" var="item">
+                <tr>
+                    <td data-label="Account Name">
+                        <div class="slds-truncate" title="">{!item.CaseNumber}</div>
+                    </td>
+                    <td data-label="Industry">
+                        <div class="slds-truncate" title="">{!item.Priority}</div>
+                    </td>
+                    <td data-label="Industry">
+                        <div class="slds-truncate" title="">{!item.Status}</div>
+                    </td>
+                </tr>
+            </aura:iteration>
+        </aura:if> 
+
+        </tbody>
+    </table>
+
+
+</aura:component>

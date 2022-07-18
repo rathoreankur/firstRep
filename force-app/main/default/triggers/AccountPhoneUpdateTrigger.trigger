@@ -1,5 +1,5 @@
 // When User Change the Phone No On Conact Object Then the Same Phone
-// Should Be Update to Parent Account Record
+// Should Be Update to Parent Account Record.
 trigger AccountPhoneUpdateTrigger on Contact (after Update) {
     Map<Id,String> accIdPhoneMap = new Map<Id,String>();
     List<Account> acclistToUpdate = new List<Account>();
